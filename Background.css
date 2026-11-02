@@ -1,0 +1,25 @@
+body.custom-background .animated-bg {
+    background-color: #090611;
+}
+
+body.custom-background .animated-bg::after {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: rgba(5, 8, 14, 0.35);
+    content: "";
+}
+
+body.custom-background .animated-bg .particle {
+    display: none;
+}
+
+.animated-bg .custom-background-media {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}

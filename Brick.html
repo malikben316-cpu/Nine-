@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nine Store</title>
+    <link rel="stylesheet" href="Brick.css">
+    <link rel="stylesheet" href="Background.css">
+</head>
+<body data-page-title="productsPageTitle">
+    <div class="animated-bg">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+
+    <div class="app-container">
+<!-- Sidebar -->
+<aside class="sidebar">
+    <div class="logo"><span class="logo-name" data-i18n="storeName">Nine Store</span><span class="logo-mark" aria-hidden="true">9</span></div>
+    
+    <nav class="nav-menu">
+        <a href="index.html" data-nav-icon="home"><img class="nav-icon" src="store/svg/home.svg" alt="" aria-hidden="true"><span class="nav-label" data-i18n="home">Home</span></a>
+        <a href="games.html" data-nav-icon="games"><img class="nav-icon" src="store/svg/games.svg" alt="" aria-hidden="true"><span class="nav-label" data-i18n="games">Games</span></a>
+        <a href="apps.html" data-nav-icon="apps"><img class="nav-icon" src="store/svg/apps.svg" alt="" aria-hidden="true"><span class="nav-label" data-i18n="apps">Apps</span></a>
+        <a href="Brick.html" data-nav-icon="products"><img class="nav-icon" src="store/svg/Brick Products.svg" alt="" aria-hidden="true"><span class="nav-label" data-i18n="products">Brick Products</span></a>
+        <a href="Settings.html" data-nav-icon="settings"><img class="nav-icon" src="store/svg/settings.svg" alt="" aria-hidden="true"><span class="nav-label" data-i18n="settings">Settings</span></a>
+    </nav>
+    <button class="sidebar-toggle" type="button" aria-expanded="true" aria-label="Collapse sidebar" title="Collapse sidebar">
+        <span></span><span></span><span></span>
+    </button>
+</aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Top Search Bar -->
+            <header class="top-bar">
+                <input type="text" id="searchInput" data-i18n-attr="placeholder:search" placeholder="Search..." />
+            </header>
+
+            <!-- Products Section -->
+            <section class="products-section">
+                <h2 data-i18n="productsTitle">Brick Products</h2>
+                <div class="products-grid" id="productsGrid">
+                    <!-- Product Card -->
+                    <div class="game-card">
+                        <h3>Brick Gamepad</h3>
+                        <span class="badge-free" data-i18n="free">Free</span>
+                        <button class="btn-download" data-i18n="download">Download</button>
+                    </div>
+                    <div class="game-card">
+                        <h3>Brick Keyboard</h3>
+                        <span class="badge-free" data-i18n="free">Free</span>
+                        <button class="btn-download" data-i18n="download">Download</button>
+                    </div>
+                    <div class="game-card">
+                        <h3>Brick Mouse</h3>
+                        <span class="badge-free" data-i18n="free">Free</span>
+                        <button class="btn-download" data-i18n="download">Download</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="main.js"></script>
+    <script src="i18n.js"></script>
+    <script src="background.js"></script>
+    <script src="app-preferences.js"></script>
+</body>
+</html>

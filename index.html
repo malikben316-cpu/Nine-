@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nine Store</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="Background.css">
+    <link rel="stylesheet" href="Home.css">
+</head>
+<body data-page-title="homeTitle">
+    <div class="animated-bg">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>   
+    </div>
+
+    <div class="app-container">
+<!-- Sidebar -->
+<aside class="sidebar">
+    <div class="logo"><span class="logo-name" data-i18n="storeName">Nine Store</span><span class="logo-mark" aria-hidden="true">9</span></div>
+     
+    <nav class="nav-menu">
+        <a href="index.html" data-nav-icon="home"><img class="nav-icon" src="store/svg/home.svg" alt="" aria-hidden="true"><span class="nav-label" data-i18n="home">Home</span></a>
+        <a href="games.html" data-nav-icon="games"><img class="nav-icon" src="store/svg/games.svg" alt="" aria-hidden="true"><span class="nav-label" data-i18n="games">Games</span></a>
+        <a href="apps.html" data-nav-icon="apps"><img class="nav-icon" src="store/svg/apps.svg" alt="" aria-hidden="true"><span class="nav-label" data-i18n="apps">Apps</span></a>
+        <a href="Brick.html" data-nav-icon="products"><img class="nav-icon" src="store/svg/Brick Products.svg" alt="" aria-hidden="true"><span class="nav-label" data-i18n="products">Brick Products</span></a>
+        <a href="Settings.html" data-nav-icon="settings"><img class="nav-icon" src="store/svg/settings.svg" alt="" aria-hidden="true"><span class="nav-label" data-i18n="settings">Settings</span></a>
+    </nav>
+    <button class="sidebar-toggle" type="button" aria-expanded="true" aria-label="Collapse sidebar" title="Collapse sidebar">
+        <span></span><span></span><span></span>
+    </button>
+</aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Top Search Bar -->
+            <header class="top-bar">
+                <input type="text" id="searchInput" data-i18n-attr="placeholder:search" placeholder="Search..." />
+            </header>
+
+            <section class="storefront" aria-label="Featured picks" data-i18n-attr="aria-label:featuredPicks">
+                <div class="featured-carousel" id="featuredCarousel" aria-roledescription="carousel">
+                    <button class="carousel-arrow carousel-previous" type="button" data-carousel-step="-1" data-i18n-attr="aria-label:previousFeatured" aria-label="Previous featured item">‹</button>
+                    <button class="carousel-arrow carousel-next" type="button" data-carousel-step="1" data-i18n-attr="aria-label:nextFeatured" aria-label="Next featured item">›</button>
+                </div>
+
+                <div class="promo-column" id="promoColumn"></div>
+
+                <div class="carousel-pagination" id="carouselPagination" aria-label="Featured slides" data-i18n-attr="aria-label:featuredSlides"></div>
+            </section>
+
+            <section class="games-section">
+                <div class="store-section-heading">
+                    <div>
+                        <span class="section-eyebrow" data-i18n="storeCollection">THE COLLECTION</span>
+                        <h2 data-i18n="exploreCollection">Explore the Store</h2>
+                    </div>
+                    <a href="games.html" data-i18n="viewAllGames">Browse games</a>
+                </div>
+                <div class="games-grid" id="gamesGrid">
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="store-catalog.js"></script>
+    <script src="main.js"></script>
+    <script src="i18n.js"></script>
+    <script src="background.js"></script>
+    <script src="home.js"></script>
+    <script src="app-preferences.js"></script>
+</body>
+</html>

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nine Store</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="Settings.css">
+    <link rel="stylesheet" href="Background.css">
+</head>
+<body data-page-title="settingsPageTitle">
+    <div class="animated-bg">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo"><span class="logo-name" data-i18n="storeName">Nine Store</span><span class="logo-mark" aria-hidden="true">9</span></div>
+            <nav class="nav-menu">
+                <a href="index.html" data-nav-icon="home"><img class="nav-icon" src="store/svg/home.svg" alt="" aria-hidden="true"><span class="nav-label" data-i18n="home">Home</span></a>
+                <a href="games.html" data-nav-icon="games"><img class="nav-icon" src="store/svg/games.svg" alt="" aria-hidden="true"><span class="nav-label" data-i18n="games">Games</span></a>
+                <a href="apps.html" data-nav-icon="apps"><img class="nav-icon" src="store/svg/apps.svg" alt="" aria-hidden="true"><span class="nav-label" data-i18n="apps">Apps</span></a>
+                <a href="Brick.html" data-nav-icon="products"><img class="nav-icon" src="store/svg/Brick Products.svg" alt="" aria-hidden="true"><span class="nav-label" data-i18n="products">Brick Products</span></a>
+                <a href="Library.html" data-nav-icon="library"><img class="nav-icon" src="store/svg/my library.svg" alt="" aria-hidden="true"><span class="nav-label" data-i18n="library">My Library</span></a>
+                <a href="Settings.html" class="active" data-nav-icon="settings"><img class="nav-icon" src="store/svg/settings.svg" alt="" aria-hidden="true"><span class="nav-label" data-i18n="settings">Settings</span></a>
+            </nav>
+            <button class="sidebar-toggle" type="button" aria-expanded="true" aria-label="Collapse sidebar" title="Collapse sidebar">
+                <span></span><span></span><span></span>
+            </button>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="top-bar">
+                <h1 data-i18n="settingsTitle">Settings</h1>
+            </header>
+
+            <section class="settings-section">
+                <div class="setting-card">
+                    <h3 data-i18n="langTitle">Language</h3>
+                    <p data-i18n="langDesc">Choose your preferred store language.</p>
+                    <select id="languageSelect" class="setting-select">
+                        <option value="en">English</option>
+                        <option value="ar">العربية</option>
+                        <option value="fr">Français</option>
+                        <option value="es">Español</option>
+                        <option value="de">Deutsch</option>
+                        <option value="ru">Русский</option>
+                        <option value="tr">Türkçe</option>
+                        <option value="zh">中文</option>
+                        <option value="ja">日本語</option>
+                        <option value="ko">한국어</option>
+                        <option value="nk">조선말</option>
+                    </select>
+                </div>
+
+                <div class="setting-card">
+                    <h3 data-i18n="backgroundTitle">App Background</h3>
+                    <p data-i18n="backgroundDesc">Use the original animation or choose a video or GIF for your background.</p>
+                    <label class="background-mode-label" for="backgroundModeSelect" data-i18n="backgroundMode">Background type</label>
+                    <select id="backgroundModeSelect" class="setting-select">
+                        <option value="animated" data-i18n="animatedBackground">Animated background</option>
+                        <option value="custom" data-i18n="customAnimatedBackground">Custom animated background</option>
+                    </select>
+
+                    <div id="wallpaperDropZone" class="wallpaper-drop-zone" tabindex="0" role="button" aria-controls="wallpaperFileInput">
+                        <span class="wallpaper-drop-icon" aria-hidden="true">▢</span>
+                        <p data-i18n="wallpaperDropText">Drag and drop a video or GIF here</p>
+                    </div>
+                    <label class="wallpaper-file-picker" for="wallpaperFileInput">
+                        <span class="wallpaper-file-icon" aria-hidden="true">▧</span>
+                        <span>
+                            <strong data-i18n="chooseWallpaper">Choose a file</strong>
+                            <small data-i18n="wallpaperFileTypes">Supported: MP4, WebM, GIF, and animated WebP</small>
+                        </span>
+                        <span class="wallpaper-picker-arrow" aria-hidden="true">›</span>
+                    </label>
+                    <input id="wallpaperFileInput" class="wallpaper-file-input" type="file" accept="video/mp4,video/webm,video/ogg,image/gif,image/webp">
+
+                    <div class="wallpaper-url-group">
+                        <label class="background-mode-label" for="wallpaperUrlInput" data-i18n="wallpaperUrlLabel">Or use a video/GIF link</label>
+                        <input id="wallpaperUrlInput" class="setting-input" type="url" data-i18n-attr="placeholder:wallpaperUrlPlaceholder" placeholder="https://example.com/background.mp4">
+                        <div class="wallpaper-url-actions">
+                            <select id="wallpaperUrlType" class="setting-select" aria-label="Link media type" data-i18n-attr="aria-label:wallpaperUrlTypeLabel">
+                                <option value="video" data-i18n="videoLinkType">Video link</option>
+                                <option value="gif" data-i18n="gifLinkType">GIF link</option>
+                            </select>
+                            <button id="applyWallpaperUrlBtn" class="btn-save" type="button" data-i18n="applyWallpaperUrl">Use link</button>
+                        </div>
+                    </div>
+
+                    <button id="resetWallpaperBtn" class="btn-reset-wallpaper" type="button" data-i18n="resetWallpaper">Delete background and restore original</button>
+                    <p id="wallpaperFeedback" class="wallpaper-feedback" role="status" aria-live="polite" hidden></p>
+                </div>
+
+                <div class="setting-card">
+                    <h3 data-i18n="appearanceTitle">Accessibility and appearance</h3>
+                    <p data-i18n="appearanceDesc">Adjust readability and motion across the store.</p>
+                    <label class="preference-row" for="textScaleSelect">
+                        <span data-i18n="textScaleLabel">Text size</span>
+                        <select id="textScaleSelect" class="setting-select">
+                            <option value="1" data-i18n="textScaleNormal">Normal</option>
+                            <option value="1.1" data-i18n="textScaleLarge">Large</option>
+                            <option value="1.2" data-i18n="textScaleExtraLarge">Extra large</option>
+                        </select>
+                    </label>
+                    <label class="preference-row">
+                        <span data-i18n="highContrastLabel">High contrast</span>
+                        <input id="highContrastToggle" type="checkbox">
+                    </label>
+                    <label class="preference-row">
+                        <span data-i18n="reduceMotionLabel">Reduce motion</span>
+                        <input id="reduceMotionToggle" type="checkbox">
+                    </label>
+                </div>
+
+                <div class="setting-card">
+                    <h3 data-i18n="downloadsTitle">Download preferences</h3>
+                    <p data-i18n="downloadsDesc">Control the library download queue and completion alerts.</p>
+                    <label class="preference-row" for="downloadConcurrency">
+                        <span data-i18n="concurrentDownloadsLabel">Concurrent downloads</span>
+                        <select id="downloadConcurrency" class="setting-select">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </select>
+                    </label>
+                    <label class="preference-row" for="largeDownloadThreshold">
+                        <span data-i18n="largeDownloadLabel">Confirm downloads larger than</span>
+                        <select id="largeDownloadThreshold" class="setting-select">
+                            <option value="0" data-i18n="largeDownloadOff">No limit</option>
+                            <option value="50">50 MB</option>
+                            <option value="100">100 MB</option>
+                            <option value="200">200 MB</option>
+                        </select>
+                    </label>
+                    <label class="preference-row">
+                        <span data-i18n="completionNotificationsLabel">Notify when a download completes</span>
+                        <input id="completionNotificationsToggle" type="checkbox">
+                    </label>
+                    <label class="preference-row">
+                        <span data-i18n="notificationSoundLabel">Play a sound with notifications</span>
+                        <input id="notificationSoundToggle" type="checkbox">
+                    </label>
+                    <p id="browserStorageInfo" class="settings-feedback" role="status" aria-live="polite"></p>
+                    <p id="libraryArchiveInfo" class="settings-feedback" role="status" aria-live="polite"></p>
+                </div>
+
+                <div class="setting-card">
+                    <h3 data-i18n="storePreferencesTitle">Store preferences</h3>
+                    <p data-i18n="storePreferencesDesc">Choose how products are shown on the home page.</p>
+                    <label class="preference-row" for="startupPageSelect">
+                        <span data-i18n="startupPageLabel">Default page when Nine Store opens</span>
+                        <select id="startupPageSelect" class="setting-select">
+                            <option value="index.html" data-i18n="home">Home</option>
+                            <option value="games.html" data-i18n="games">Games</option>
+                            <option value="apps.html" data-i18n="apps">Apps</option>
+                            <option value="Library.html" data-i18n="library">My Library</option>
+                            <option value="Brick.html" data-i18n="products">Brick Products</option>
+                        </select>
+                    </label>
+                    <label class="preference-row" for="storeSortSelect">
+                        <span data-i18n="storeSortLabel">Product order</span>
+                        <select id="storeSortSelect" class="setting-select">
+                            <option value="recommended" data-i18n="storeSortRecommended">Recommended</option>
+                            <option value="alphabetical" data-i18n="storeSortAlphabetical">Alphabetical</option>
+                        </select>
+                    </label>
+                    <label class="preference-row" for="storeCategorySelect">
+                        <span data-i18n="storeCategoryLabel">Home page products</span>
+                        <select id="storeCategorySelect" class="setting-select">
+                            <option value="all" data-i18n="storeCategoryAll">Games and apps</option>
+                            <option value="games" data-i18n="storeCategoryGames">Games only</option>
+                            <option value="apps" data-i18n="storeCategoryApps">Apps only</option>
+                        </select>
+                    </label>
+                    <label class="preference-row" for="storeMixSelect">
+                        <span data-i18n="storeMixLabel">Featured mix</span>
+                        <select id="storeMixSelect" class="setting-select">
+                            <option value="balanced" data-i18n="storeMixBalanced">Balanced</option>
+                            <option value="games" data-i18n="storeMixGames">More games</option>
+                            <option value="apps" data-i18n="storeMixApps">More apps</option>
+                        </select>
+                    </label>
+                </div>
+
+                <div class="setting-card">
+                    <h3 data-i18n="privacyTitle">Privacy and activity</h3>
+                    <p data-i18n="privacyDesc">Activity stays on this device and is never sent to a server.</p>
+                    <label class="preference-row">
+                        <span data-i18n="saveActivityLabel">Save search and recently viewed history</span>
+                        <input id="saveActivityToggle" type="checkbox">
+                    </label>
+                    <p class="history-list-label" data-i18n="recentSearchesLabel">Recent searches</p>
+                    <ul id="searchHistoryList" class="history-list"></ul>
+                    <p class="history-list-label" data-i18n="recentlyViewedLabel">Recently viewed</p>
+                    <ul id="recentHistoryList" class="history-list"></ul>
+                    <div class="settings-actions">
+                        <button id="clearSearchHistoryBtn" class="btn-secondary" type="button" data-i18n="clearSearchHistory">Clear search history</button>
+                        <button id="clearRecentHistoryBtn" class="btn-secondary" type="button" data-i18n="clearRecentHistory">Clear recently viewed</button>
+                    </div>
+                    <div class="settings-actions">
+                        <button id="clearStoreDataBtn" class="btn-danger" type="button" data-i18n="clearStoreData">Clear all app data</button>
+                    </div>
+                    <p id="privacyFeedback" class="settings-feedback" role="status" aria-live="polite"></p>
+                </div>
+
+                <div class="setting-card">
+                    <h3 data-i18n="backupTitle">Back up settings</h3>
+                    <p data-i18n="backupDesc">Export or restore preferences with a JSON file. Library, activity, and uploaded background files are not included.</p>
+                    <div class="settings-actions">
+                        <button id="exportSettingsBtn" class="btn-save" type="button" data-i18n="exportSettings">Export settings</button>
+                        <label class="btn-secondary import-settings-label" for="importSettingsInput" data-i18n="importSettings">Import settings</label>
+                        <input id="importSettingsInput" class="wallpaper-file-input" type="file" accept="application/json,.json">
+                    </div>
+                    <p id="backupFeedback" class="settings-feedback" role="status" aria-live="polite"></p>
+                </div>
+
+                <div class="setting-card">
+                    <h3 data-i18n="notificationsTitle">Notifications</h3>
+                    <p data-i18n="notificationsDesc">System notifications are optional. In-app completion cards work without permission.</p>
+                    <button id="enableNotificationsBtn" class="btn-secondary" type="button" data-i18n="enableNotifications">Enable desktop notifications</button>
+                    <p id="notificationFeedback" class="settings-feedback" role="status" aria-live="polite"></p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="main.js"></script>
+    <script src="Settings.js"></script>
+    <script src="i18n.js"></script>
+    <script src="background.js"></script>
+    <script src="app-preferences.js"></script>
+</body>
+</html>
